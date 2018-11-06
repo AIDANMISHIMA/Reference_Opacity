@@ -1,11 +1,20 @@
+float CircleX;
+float speed;
 void setup() {
-  size(1000,1000);
-background(random (255));
+  size(600,600);
+
+  CircleX=0;
+  speed=10;
 }
 
-void draw() {
-  fill(random(255),random(255),random(255));
-  ellipse(random(1000),random(1000),random(250),random(250));
-  rect(mouseX,mouseY,random(500),random(500));
-  frameRate(1000000000);
+void draw () {
+    background(0);
+  fill(255,0,0);
+  ellipse(CircleX,300,20,20);
+  CircleX=CircleX+speed;
+  if(CircleX>600){
+    speed=-15;
+  }
+  if(CircleX<0){
+    speed=10;}
 }
